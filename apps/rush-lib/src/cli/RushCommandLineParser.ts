@@ -29,6 +29,7 @@ import { PublishAction } from './actions/PublishAction';
 import { PurgeAction } from './actions/PurgeAction';
 import { ScanAction } from './actions/ScanAction';
 import { UnlinkAction } from './actions/UnlinkAction';
+import { SelectAction } from './actions/SelectAction';
 import { UpdateAction } from './actions/UpdateAction';
 import { UpdateAutoinstallerAction } from './actions/UpdateAutoinstallerAction';
 import { VersionAction } from './actions/VersionAction';
@@ -170,6 +171,7 @@ export class RushCommandLineParser extends CommandLineParser {
       this.addAction(new PurgeAction(this));
       this.addAction(new ScanAction(this));
       this.addAction(new UnlinkAction(this));
+      this.addAction(new SelectAction(this));
       this.addAction(new UpdateAction(this));
       this.addAction(new UpdateAutoinstallerAction(this));
       this.addAction(new VersionAction(this));
@@ -177,6 +179,8 @@ export class RushCommandLineParser extends CommandLineParser {
 
       this._populateScriptActions();
     } catch (error) {
+      debugger;
+
       this._reportErrorAndSetExitCode(error);
     }
   }
