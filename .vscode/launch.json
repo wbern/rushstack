@@ -1,5 +1,5 @@
 {
-	"version": "0.2.0",
+ 	"version": "0.2.0",
 	"configurations": [
 		{
 			"name": "Launch",
@@ -22,22 +22,40 @@
 			"outDir": null
 		},
 		{
-			"name": "Rush Debug",
+			"name": "Rush Update",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}/apps/rush-lib/lib/start.js",
+			"program": "${workspaceRoot}/apps/rush-lib/src/start.ts",
 			"stopOnEntry": true,
 			"args": [
-				"update",
-				"--variant",
-				"test"
+				"update"
 			],
+      "internalConsoleOptions": "neverOpen",
+      "console": "integratedTerminal",
 			"cwd": "${workspaceRoot}",
 			"runtimeExecutable": null,
 			"runtimeArgs": [
 				"--nolazy",
-        "--debug"
+        "--inspect"
 			],
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"sourceMaps": true
+		},
+		{
+			"name": "Rush Update",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/apps/rush-lib/src/start.ts",
+			"stopOnEntry": true,
+			"args": [
+				"update"
+			],
+      "internalConsoleOptions": "neverOpen",
+      "console": "integratedTerminal",
+			"cwd": "${workspaceRoot}",
+			"runtimeExecutable": null,
 			"env": {
 				"NODE_ENV": "development"
 			},
@@ -50,4 +68,3 @@
 			"port": 5858
 		}
 	]
-}
