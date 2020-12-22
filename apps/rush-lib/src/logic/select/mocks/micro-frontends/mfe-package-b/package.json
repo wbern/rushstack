@@ -1,0 +1,9 @@
+{
+  "name": "mfe-package-b",
+  "scripts": {
+    "test": "echo hello!",
+    "test:watch": "echo hello!",
+    "build:watch": "echo hello!",
+    "build:prod": "echo hello!"
+  }
+}

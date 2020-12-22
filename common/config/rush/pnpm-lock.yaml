@@ -229,6 +229,7 @@ importers:
     dependencies:
       '@azure/identity': 1.2.0
       '@azure/storage-blob': 12.3.0
+      '@lerna/child-process': 3.16.5
       '@pnpm/link-bins': 5.3.20
       '@rushstack/node-core-library': 'link:../../libraries/node-core-library'
       '@rushstack/package-deps-hash': 'link:../../libraries/package-deps-hash'
@@ -236,12 +237,17 @@ importers:
       '@rushstack/terminal': 'link:../../libraries/terminal'
       '@rushstack/ts-command-line': 'link:../../libraries/ts-command-line'
       '@yarnpkg/lockfile': 1.0.2
+      ansi-colors: 4.1.1
       builtin-modules: 3.1.0
       cli-table: 0.3.1
       colors: 1.2.5
+      enquirer: 2.3.6
+      find-up: 3.0.0
+      fuzzy: 0.1.3
       git-repo-info: 2.1.1
       glob: 7.0.6
       glob-escape: 0.0.2
+      hjson: 3.2.2
       https-proxy-agent: 2.2.4
       ignore: 5.1.8
       inquirer: 6.2.2
@@ -257,9 +263,11 @@ importers:
       semver: 7.3.4
       ssri: 8.0.0
       strict-uri-encode: 2.0.0
+      strip-ansi: 6.0.0
       tar: 5.0.5
       true-case-path: 2.2.1
       wordwrap: 1.0.0
+      yargs: 16.2.0
       z-schema: 3.18.4
     devDependencies:
       '@rushstack/eslint-config': 'link:../../stack/eslint-config'
@@ -288,6 +296,7 @@ importers:
     specifiers:
       '@azure/identity': ~1.2.0
       '@azure/storage-blob': ~12.3.0
+      '@lerna/child-process': ^3.13.3
       '@pnpm/link-bins': ~5.3.7
       '@rushstack/eslint-config': 'workspace:*'
       '@rushstack/heft': 'workspace:*'
@@ -317,12 +326,17 @@ importers:
       '@types/wordwrap': 1.0.0
       '@types/z-schema': 3.16.31
       '@yarnpkg/lockfile': ~1.0.2
+      ansi-colors: ^4.1.1
       builtin-modules: ~3.1.0
       cli-table: ~0.3.1
       colors: ~1.2.1
+      enquirer: ^2.3.6
+      find-up: ^3.0.0
+      fuzzy: ^0.1.3
       git-repo-info: ~2.1.0
       glob: ~7.0.5
       glob-escape: ~0.0.2
+      hjson: ^3.2.2
       https-proxy-agent: ~2.2.1
       ignore: ~5.1.6
       inquirer: ~6.2.0
@@ -339,9 +353,11 @@ importers:
       semver: ~7.3.0
       ssri: ~8.0.0
       strict-uri-encode: ~2.0.0
+      strip-ansi: ^6.0.0
       tar: ~5.0.5
       true-case-path: ~2.2.1
       wordwrap: ~1.0.0
+      yargs: ^16.2.0
       z-schema: ~3.18.3
   ../../build-tests/api-documenter-test:
     devDependencies:
@@ -628,7 +644,6 @@ importers:
     dependencies:
       buttono: 1.0.2
     devDependencies:
-      '@microsoft/rush-stack-compiler-3.9': 'link:../../stack/rush-stack-compiler-3.9'
       '@rushstack/eslint-config': 'link:../../stack/eslint-config'
       '@rushstack/heft': 'link:../../apps/heft'
       '@types/heft-jest': 1.0.1
@@ -649,7 +664,6 @@ importers:
       typescript: 3.9.7
       webpack: 4.44.2_webpack@4.44.2
     specifiers:
-      '@microsoft/rush-stack-compiler-3.9': 'workspace:*'
       '@rushstack/eslint-config': 'workspace:*'
       '@rushstack/heft': 'workspace:*'
       '@types/heft-jest': 1.0.1
@@ -1560,13 +1574,11 @@ importers:
       chokidar: 3.4.3
       glob: 7.0.6
     devDependencies:
-      '@microsoft/node-library-build': 'link:../../core-build/node-library-build'
       '@rushstack/eslint-config': 'link:../../stack/eslint-config'
       '@rushstack/heft': 0.22.3
       '@rushstack/heft-node-rig': 0.1.28_@rushstack+heft@0.22.3
       '@types/glob': 7.1.1
     specifiers:
-      '@microsoft/node-library-build': 'workspace:*'
       '@rushstack/eslint-config': 'workspace:*'
       '@rushstack/heft': 0.22.3
       '@rushstack/heft-node-rig': 0.1.28
@@ -3031,6 +3043,16 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-OXD0RgQ86Tu3MazKo8bnrkDRaDXXMGUqd+kTtLtK1Zb7CRzQcaSRPPPV37SvYTdevXEBVxe0HXylEjs8ibkmCw==
+  /@lerna/child-process/3.16.5:
+    dependencies:
+      chalk: 2.4.2
+      execa: 1.0.0
+      strong-log-transformer: 2.1.0
+    dev: false
+    engines:
+      node: '>= 6.9.0'
+    resolution:
+      integrity: sha512-vdcI7mzei9ERRV4oO8Y1LHBZ3A5+ampRKg1wq5nutLsUA4mEBN6H7JqjWOMY9xZemv6+kATm2ofjJ3lW5TszQg==
   /@microsoft/api-extractor-model/7.10.10:
     dependencies:
       '@microsoft/tsdoc': 0.12.19
@@ -5385,6 +5407,14 @@ packages:
       wrap-ansi: 6.2.0
     resolution:
       integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==
+  /cliui/7.0.4:
+    dependencies:
+      string-width: 4.2.0
+      strip-ansi: 6.0.0
+      wrap-ansi: 7.0.0
+    dev: false
+    resolution:
+      integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==
   /clone-buffer/1.0.0:
     engines:
       node: '>= 0.10'
@@ -7304,6 +7334,12 @@ packages:
   /functional-red-black-tree/1.0.1:
     resolution:
       integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+  /fuzzy/0.1.3:
+    dev: false
+    engines:
+      node: '>= 0.6.0'
+    resolution:
+      integrity: sha1-THbsL/CsGjap3M+aAN+GIweNTtg=
   /gauge/2.7.4:
     dependencies:
       aproba: 1.2.0
@@ -7870,6 +7906,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+  /hjson/3.2.2:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-MkUeB0cTIlppeSsndgESkfFD21T2nXPRaBStLtf3cAYA2bVEFdXlodZB0TukwZiobPD1Ksax5DK4RTZeaXCI3Q==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -12750,6 +12791,17 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+  /strong-log-transformer/2.1.0:
+    dependencies:
+      duplexer: 0.1.2
+      minimist: 1.2.5
+      through: 2.3.8
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-B3Hgul+z0L9a236FAUC9iZsL+nVHgoCJnqCbN588DjYxvGXaXaaFbfmQ/JhvKjZwsOukuR72XbHv71Qkug0HxA==
   /style-loader/1.2.1_webpack@4.44.2:
     dependencies:
       loader-utils: 2.0.0
@@ -14753,6 +14805,16 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  /wrap-ansi/7.0.0:
+    dependencies:
+      ansi-styles: 4.3.0
+      string-width: 4.2.0
+      strip-ansi: 6.0.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   /wrappy/1.0.2:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
@@ -14846,6 +14908,12 @@ packages:
   /y18n/4.0.1:
     resolution:
       integrity: sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
+  /y18n/5.0.5:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-hsRUr4FFrvhhRH12wOdfs38Gy7k2FFzB9qgN9v3aLykRq0dRcdcpz5C9FxdS2NuhOrI/628b/KSTJ3rwHysYSg==
   /yallist/2.1.2:
     resolution:
       integrity: sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
@@ -14881,6 +14949,12 @@ packages:
       lodash.assign: 4.2.0
     resolution:
       integrity: sha1-hVaN488VD/SfpRgl8DqMiA3cxcQ=
+  /yargs-parser/20.2.4:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
   /yargs-parser/5.0.0-security.0:
     dependencies:
       camelcase: 3.0.0
@@ -14918,6 +14992,20 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
+  /yargs/16.2.0:
+    dependencies:
+      cliui: 7.0.4
+      escalade: 3.1.1
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.0
+      y18n: 5.0.5
+      yargs-parser: 20.2.4
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
   /yargs/4.6.0:
     dependencies:
       camelcase: 2.1.1

@@ -3,12 +3,40 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@lerna/child-process",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "ansi-colors",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "enquirer",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "find-up",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "fuzzy",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "hjson",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "react",
       "allowedCategories": [ "tests" ]
     },
     {
       "name": "react-dom",
       "allowedCategories": [ "tests" ]
+    },
+    {
+      "name": "strip-ansi",
+      "allowedCategories": [ "libraries" ]
     }
   ]
 }

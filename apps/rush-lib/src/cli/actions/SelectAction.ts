@@ -5,7 +5,7 @@ import * as os from 'os';
 
 import { RushCommandLineParser } from '../RushCommandLineParser';
 import { BaseRushAction } from './BaseRushAction';
-// import Select from '../../logic/select/index';
+import Select from '../../logic/select/index';
 
 export class SelectAction extends BaseRushAction {
   public constructor(parser: RushCommandLineParser) {
@@ -24,7 +24,7 @@ export class SelectAction extends BaseRushAction {
   protected async runAsync(): Promise<void> {
     console.log('start select!');
 
-    // await Select();
+    await Select();
 
     console.log('select done!');
   }
