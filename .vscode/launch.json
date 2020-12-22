@@ -26,7 +26,6 @@
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceRoot}/apps/rush-lib/src/start.ts",
-			"stopOnEntry": true,
 			"args": [
 				"update"
 			],
@@ -44,13 +43,12 @@
 			"sourceMaps": true
 		},
 		{
-			"name": "Rush Update",
+			"name": "Rush Select",
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceRoot}/apps/rush-lib/src/start.ts",
-			"stopOnEntry": true,
 			"args": [
-				"update"
+				"select"
 			],
       "internalConsoleOptions": "neverOpen",
       "console": "integratedTerminal",
